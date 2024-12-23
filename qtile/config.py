@@ -9,7 +9,7 @@ from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 
 from libqtile.backend.wayland.inputs import InputConfig
-from qtile_extras.widget import StatusNotifier
+#from qtile_extras.widget import StatusNotifier
 #from libqtile.extension.dmenu import DmenuRun
 
 #    __              
@@ -260,8 +260,8 @@ screens = [
                 ),
 
                 widget.Notify(),
-                #widget.StatusNotifier(),
-                StatusNotifier(),
+                widget.StatusNotifier(),
+                #StatusNotifier(),
                 widget.Wttr(
                     format = "%c%t (H%h)"
                 ),
