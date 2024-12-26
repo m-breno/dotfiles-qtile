@@ -83,8 +83,8 @@ keys = [
 
     # System keys
     # Screenshot
-    Key([], "Print", lazy.spawn("grim /Pictures/Screenshots/screenshot-$(date '+%y.%m.%d-%H:%M:%S').png | wl-copy")),
-        Key([mod], "Print", lazy.spawn("slurp | grim -g - /Pictures/Screenshots/screenshot-$(date '+%y.%m.%d-%H:%M:%S').png | wl-copy")),
+    Key([], "Print", lazy.spawn("grim ~/Pictures/Screenshots/screenshot-$(date '+%y.%m.%d-%H:%M:%S').png | wl-copy")),
+    Key([mod], "Print", lazy.spawn("slurp | grim -g - ~/Pictures/Screenshots/screenshot-$(date '+%y.%m.%d-%H:%M:%S').png | wl-copy")),
 
     # Volume
     Key([], "XF86AudioLowerVolume", lazy.spawn("amixer sset Master 5%-"), desc="Lower Volume by 5%"),
@@ -141,7 +141,7 @@ groups = [
         "3",
         label = "FILES",
         matches = [
-            Match(wm_class = "thunar"),
+            Match(wm_class = "Thunar"),
             Match(wm_class = "qbittorrent"),
         ],
         layout = "floating"
@@ -159,7 +159,8 @@ groups = [
         label = "MEDIA",
         matches = [
             Match(wm_class = "mpv"),
-            Match(wm_class = "music")
+            Match(wm_class = "music"),
+            Match(wm_class = "ru-turikhay-tlauncher-bootstrap-Bootstrap")
         ],
         layout = "floating"
     ),
@@ -262,9 +263,9 @@ screens = [
                 widget.Notify(),
                 widget.StatusNotifier(),
                 #StatusNotifier(),
-                widget.Wttr(
-                    format = "%c%t (H%h)"
-                ),
+                #widget.Wttr(
+                #    format = "%c%t (H%h)"
+                #),
                 #widget.Mpd2(
                 #    mouse_callbacks = {
                 #        "Button3": lazy.spawn("foot -a music ncmpcpp")
