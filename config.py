@@ -275,7 +275,7 @@ screens = [
                 #    status_format = "MPD: {play_status} {artist} - {title}",
                 #    color_progress = "#FFFFFF"
                 #),
-                widget.Mpris2(),
+                #widget.Mpris2(),
                 widget.CPU(
                     format = "CPU: {load_percent}%",
                     update_interval = 5,
