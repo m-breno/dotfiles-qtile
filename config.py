@@ -59,6 +59,10 @@ keys = [
     Key([mod, "shift"], "k", lazy.layout.shuffle_up(),      desc = "Move window up"),
     Key([mod, "shift"], "l", lazy.layout.shuffle_right(),   desc = "Move window to the right"),
 
+    # Swap columns
+    Key([mod, "shift", "control"], "h", lazy.layout.swap_column_left()),
+    Key([mod, "shift", "control"], "l", lazy.layout.swap_column_right()),
+
     # Grow/shrink windows
     Key([mod, "control"], "h", lazy.layout.grow_left(),  desc = "Grow window to the left"),
     Key([mod, "control"], "j", lazy.layout.grow_down(),  desc = "Grow window down"),
@@ -213,6 +217,9 @@ layouts = [
         border_focus_stack = ["#d75f5f", "#8f3d3d"],
         border_normal = "#242424",
         border_width = 1,
+
+        initial_ratio = 1.3,
+        insert_position = 1,
 
         margin = 5,
         margin_on_single = 0,
